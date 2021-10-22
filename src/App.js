@@ -1,24 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import { Typography } from '@mui/material';
+import Bitquery from './components/bitquery';
+import { ApolloClient, InMemoryCache, ApolloProvider  } from '@apollo/client'; 
 
 function App() {
+
+  const client = new ApolloClient({
+    
+    uri: "https://graphql.bitquery.io",
+    cache: new InMemoryCache(),
+    auth: {
+      type:  'X-API-KEY',
+      apiKey:  'BQYTYsxZMZA47wBr1PvuU8jYWieM3HSd'
+    }
+    
+    });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ApolloProvider client={client}>
+        <Typography variant="h1">Chart</Typography>
+      <Bitquery />
+      </ApolloProvider>
+    </>
   );
 }
 
