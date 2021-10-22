@@ -10,10 +10,7 @@ function App() {
     
     uri: "https://graphql.bitquery.io",
     cache: new InMemoryCache(),
-    auth: {
-      type:  'X-API-KEY',
-      apiKey:  'BQYTYsxZMZA47wBr1PvuU8jYWieM3HSd'
-    }
+
     
     });
 
