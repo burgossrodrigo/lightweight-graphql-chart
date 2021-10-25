@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Typography } from '@mui/material';
 import Bitquery from './components/bitquery';
@@ -7,12 +6,15 @@ import { ApolloClient, InMemoryCache, ApolloProvider  } from '@apollo/client';
 function App() {
 
   const client = new ApolloClient({
-    
+  
     uri: "https://graphql.bitquery.io",
     cache: new InMemoryCache(),
-
-    
+    headers: {
+      "Content-Type": "application/json",
+    "X-API-KEY": ""
+    },  
     });
+
 
   return (
     <>
