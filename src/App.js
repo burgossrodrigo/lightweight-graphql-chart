@@ -11,7 +11,7 @@ function App() {
     cache: new InMemoryCache(),
     headers: {
       "Content-Type": "application/json",
-    "X-API-KEY": ""
+    "X-API-KEY": "BQYTYsxZMZA47wBr1PvuU8jYWieM3HSd"
     },  
     });
 
